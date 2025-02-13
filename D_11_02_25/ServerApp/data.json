@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "customerName": "Azar",
+        "totalPrice": 150.0
+    },
+    {
+        "id": 2,
+        "customerName": "Aman",
+        "totalPrice": 250.0
+    }
+    
+]
