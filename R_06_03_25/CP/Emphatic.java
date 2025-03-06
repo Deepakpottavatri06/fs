@@ -52,6 +52,7 @@ public class Emphatic{
         String emp = cin.nextLine();
         String inp [] = cin.nextLine().split(" ");
         System.out.println(findWords(emp,inp));
+        cin.close();
     }
     static int findWords(String emp, String inp[]){
         Map<Character,Integer> map = new HashMap<>();
