@@ -1,3 +1,96 @@
+/*Question: Longest Secret Route in a Binary Tree
+
+Balbir Singh has discovered a secret network represented as a binary tree.
+Each node of the tree represents a checkpoint in the network.
+Balbir's task is to find the longest path between any two checkpoints in the network.
+
+The longest path may or may not pass through the root of the tree.
+Help Balbir determine the length of this longest path, called the Longest Secret Route.
+Input Format:
+
+    A space-separated list of integers representing the level order traversal of the binary tree.
+    -1 represents a null node (no child).
+
+Output Format:
+
+    Print a single integer representing the length of the longest path between any two nodes in the tree.
+
+Constraints:
+
+    The binary tree contains at least one node.
+    Node values are integers.
+
+Example Input-1:
+
+1 2 3 4 5 -1 -1
+
+Example Output-1:
+
+3
+
+Explanation:
+The longest path is between nodes 4 and 5, passing through 2. The path length is 3.
+Example Input-2:
+
+1 2 3 -1 -1 4 5
+
+Example Output-2:
+
+3
+
+Explanation:
+The longest path is between nodes 4 and 5, passing through 3. The path length is 3.
+Example Input-3:
+
+1 -1 2 3 -1 -1 4
+
+Example Output-3:
+
+3
+
+Explanation:
+The longest path is between nodes 3 and 4, passing through 2. The path length is 3.
+Test Cases:
+
+Test Case 1:
+
+Input:
+1 2 -1 3 -1 4 -1
+
+Output:
+3
+
+Test Case 2:
+
+Input:
+1 -1 2 -1 3 -1 4
+
+Output:
+3
+
+Test Case 3:
+
+Input:
+1 2 3 -1 -1 4 -1
+
+Output:
+3
+
+Test Case 4:
+
+Input:
+5 -1 -1
+
+Output:
+0
+
+Test Case 5:
+
+Input:
+1 2 3 4 5 6 7
+
+Output:
+ */
 import java.util.*;
 
 

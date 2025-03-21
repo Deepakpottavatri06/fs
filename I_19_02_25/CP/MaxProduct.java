@@ -110,3 +110,88 @@ public class MaxProduct {
         return root.val + left + right;
     }
 }
+/*import java.util.*;
+
+class Node {
+    int val;
+    Node left;
+    Node right;
+
+    Node(int val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+public class MaxProduct {
+    private static final int MOD = 1000000007;
+
+    public static void main(String[] args) {
+        Scanner cin = new Scanner(System.in);
+        String[] inp = cin.nextLine().split(" ");
+        int[] levelorder = new int[inp.length];
+        for (int i = 0; i < inp.length; i++) {
+            levelorder[i] = Integer.parseInt(inp[i]);
+        }
+        Node root = construct(levelorder);
+        System.out.println(maxProduct(root));
+        cin.close();
+    }
+
+    static int maxProduct(Node root) {
+        if (root == null) return 0;
+
+        Set<Integer> subtreeSums = new HashSet<>();
+        int totalSum = sumTree(root, subtreeSums);
+        long maxProduct = 0;
+
+        for (int subSum : subtreeSums) {
+            long product = (long) subSum * (totalSum - subSum);
+            maxProduct = Math.max(maxProduct, product);
+        }
+
+        return (int) (maxProduct % MOD);
+    }
+
+    static int sumTree(Node root, Set<Integer> subtreeSums) {
+        if (root == null) return 0;
+
+        int leftSum = sumTree(root.left, subtreeSums);
+        int rightSum = sumTree(root.right, subtreeSums);
+
+        int subtreeSum = root.val + leftSum + rightSum;
+
+        // Store the subtree sum for possible splits
+        subtreeSums.add(subtreeSum);
+
+        return subtreeSum;
+    }
+
+    static Node construct(int[] levelorder) {
+        int n = levelorder.length;
+        if (n == 0 || levelorder[0] == -1) return null;
+
+        Node root = new Node(levelorder[0]);
+        Queue<Node> queue = new ArrayDeque<>();
+        queue.add(root);
+        int i = 1;
+
+        while (i < n) {
+            Node current = queue.poll();
+            if (levelorder[i] != -1) {
+                current.left = new Node(levelorder[i]);
+                queue.add(current.left);
+            }
+            i++;
+            if (i < n && levelorder[i] != -1) {
+                current.right = new Node(levelorder[i]);
+                queue.add(current.right);
+            }
+            i++;
+        }
+
+        return root;
+    }
+}
+ */

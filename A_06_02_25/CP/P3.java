@@ -76,12 +76,13 @@ public class P3{
         while(j<n){
             area +=arr[j];
             map.put(arr[j],map.getOrDefault(arr[j],0)+1);
-            while((i<j)&& map.containsKey(arr[j]) && (map.get(arr[j])>maxF || area > maxA) ){
+            while((i<j)&& ((map.containsKey(arr[j]) && (map.get(arr[j])>maxF) || area > maxA))){ 
                 area-=arr[i];
-                map.put(arr[j],map.getOrDefault(arr[j],0)-1);
+                map.put(arr[i],map.getOrDefault(arr[i],0)-1);
                 i++;
             }
             maxS = Math.max((j-i+1),maxS);
+            System.out.println(Arrays.toString(Arrays.copyOfRange(arr,i,j+1)));
             j++;
         }
         return maxS;
