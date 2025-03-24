@@ -54,6 +54,7 @@ public class CountingSetBits{
                 t = t & (t-1);
                 count++;
             }
+            // count  = Integer.bitCount(t);
             arr[i] = count;
         }
 

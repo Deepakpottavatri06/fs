@@ -71,10 +71,10 @@ class DisjointSet{
         else if(rank[rootx]<rank[rooty]){
             parent[rooty] = rootx;
         }
-        else{
-            parent[rootx] = rooty;
-            rank[rootx]--;
-        }
+        // else{
+        //     parent[rootx] = rooty;
+        //     rank[rootx]--;
+        // }
         return true;
     }
     
