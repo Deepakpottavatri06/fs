@@ -1,0 +1,43 @@
+<!---You must create a basic client interface with the following requirements:
+	- Connect to the WebSocket server at ws://localhost:8080.
+	- The page should have:
+		- A <div> with id="chat" that shows all chat messages.
+		- An <input> box with id="msg" to type the message.
+		- A <button> that, when clicked, sends the message.
+	- When a message is received from the server:
+		- It must be displayed as a new paragraph <p> inside the #chat area.
+	- When the user sends a message:
+		- It should be sent to the server using WebSocket.
+		- The input box should be cleared after sending.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat</title>
+</head>
+<body>
+    <div id="chat">
+
+    </div>
+    <input type="text" name="msg" id="msg">
+    <button onclick="Send()">Send</button>
+    <script>
+        const socket = new WebSocket('ws://10.11.10.161:8080');
+        const chatBox = document.getElementById('chat');
+        const inpMsg = document.getElementById('msg');
+
+        socket.onmessage = (event) =>{
+            const msg = document.createElement('p');
+            msg.textContent = event.data.toString();
+            chatBox.appendChild(msg);
+        }
+
+        function Send(){
+            const message = inpMsg.value;
+            socket.send(message);
+            inpMsg.value = '';
+        }
+    </script>
+</body>
+</html>

@@ -48,72 +48,99 @@ Constraints:
 - P is in the range [1, The number of unique dish names in orders]. */
 import java.util.*;
 
-class TrieNode{
-    TrieNode [] children;
-    boolean end ;
-    int count = 0;
-    TrieNode(){
+class TrieNode {
+    TrieNode[] children;
+    boolean isEnd;
+    int count;
+
+    TrieNode() {
         children = new TrieNode[26];
-        end = false;
+        isEnd = false;
+        count = 0;
     }
-    
 }
-class Trie{
+
+class Trie {
     TrieNode root;
-    Trie(){
+
+    Trie() {
         root = new TrieNode();
     }
-    void insert(String str){
-        TrieNode node = root;
-        for(char c: str.toCharArray()){
-            int ind = c-'a';
-            if(node.children[ind]==null){
-                node.children[ind] = new TrieNode();
-            }
-            node = node.children[ind];
-        }
 
-        node.end = true;
+    void insert(String word) {
+        TrieNode node = root;
+        for (char c : word.toCharArray()) {
+            int index = c - 'a';
+            if (node.children[index] == null) {
+                node.children[index] = new TrieNode();
+            }
+            node = node.children[index];
+        }
+        node.isEnd = true;
         node.count++;
     }
-    boolean search (String str){
-        TrieNode node = root;
-        for(char c : str.toCharArray()){
-            if(node.children[c-'a']==null){
-                return false;
-            }
-            node = node.children[c-'a'];
+
+    void collectWords(TrieNode node, StringBuilder currentWord, List<Pair> words) {
+        if (node == null) {
+            return;
         }
-        return node.end;
+        if (node.isEnd) {
+            words.add(new Pair(currentWord.toString(), node.count));
+        }
+        for (int i = 0; i < 26; i++) {
+            if (node.children[i] != null) {
+                currentWord.append((char) ('a' + i));
+                collectWords(node.children[i], currentWord, words);
+                currentWord.deleteCharAt(currentWord.length() - 1);
+            }
+        }
     }
-    
 }
 
-class Pair{
-    String t ;
-    int v ;
-    Pair(String t, int v){
-        this.t = t;
-        this.v = v;
+class Pair {
+    String word;
+    int count;
+
+    Pair(String word, int count) {
+        this.word = word;
+        this.count = count;
     }
-} 
-public class MostFreq{
-    public static void main(String [] args){
+}
+
+public class MostFreq {
+    public static void main(String[] args) {
         Scanner cin = new Scanner(System.in);
-        String inp [] = cin.nextLine().split(",");
+        String[] inp = cin.nextLine().split(",");
         int p = cin.nextInt();
-        System.out.println(find(inp,p));
+        System.out.println(find(inp, p));
         cin.close();
     }
-    static List<String> find(String inp [], int p){
-        List<String> res = new ArrayList<>();
 
-        Trie t = new Trie();
-        
-        for(String i : inp){
-            t.insert(i);
-            
+    static List<String> find(String[] inp, int p) {
+        Trie trie = new Trie();
+        for (String word : inp) {
+            trie.insert(word);
         }
-        return res;
+
+        List<Pair> wordsWithCounts = new ArrayList<>();
+        trie.collectWords(trie.root, new StringBuilder(), wordsWithCounts);
+
+        Collections.sort(wordsWithCounts, new Comparator<Pair>() {
+            @Override
+            public int compare(Pair a, Pair b) {
+                if (a.count != b.count) {
+                    return b.count - a.count;
+                } else {
+                    return a.word.compareTo(b.word);
+                }
+            }
+        });
+
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < p; i++) {
+            result.add(wordsWithCounts.get(i).word);
+        }
+
+        return result;
     }
 }

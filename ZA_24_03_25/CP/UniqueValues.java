@@ -8,7 +8,7 @@ public class UniqueValues{
         for(int i = 0; i < inp.length ; i++){
             arr[i] = Integer.parseInt(inp[i]);
         }
-        System.out.println(find(arr));
+        System.out.println(findXor(arr));
         cin.close();
     }
     static String find(int arr[]){
@@ -23,5 +23,28 @@ public class UniqueValues{
         }
         
         return set.toString();
+    }
+    static String findXor(int arr[]){
+        int xor = 0;
+        for(int i : arr){
+            xor^=i;
+        }
+        // System.out.println(xor);
+        // System.out.println(Integer.toBinaryString(xor));
+        // System.out.println(Integer.toBinaryString(-xor));
+
+        int diff = xor & (-xor);
+        // System.out.println(Integer.toBinaryString(diff));
+        int a = 0;
+        int b = 0;
+        for(int i:arr){
+            if((i & (diff)) == 0){
+                a^=i;
+            }
+            else{
+                b^=i;
+            }
+        }
+        return "["+a+","+b+"]";
     }
 }
