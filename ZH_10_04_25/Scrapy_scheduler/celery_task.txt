@@ -1,0 +1,10 @@
+<!--
+
+Example URL value=>   http://192.168.xx.xx:5500/compare/iphone
+
+-->
+
+<config>
+    <url value="http://10.11.11.220:5000/compare/iphone"></url>
+</config>
+
