@@ -4,10 +4,10 @@
 
 ```mermaid
 graph LR
-    A[React Form] -->|Submit| B(Form Handler Lambda)
+    A[React Form] -->|AWS API Gateway| B(Form Handler Lambda)
     B --> C[(SNS Topic billAndInventoryForm)]
     C --> D[Billing Queue]
-    C --> E[Inventory Queue]
+    C --> E[Inventory Queue] 
     D --> F[Billing Lambda]
     E --> G[Inventory Lambda]
 ```
