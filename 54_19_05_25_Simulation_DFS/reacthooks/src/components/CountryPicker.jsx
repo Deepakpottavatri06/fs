@@ -11,6 +11,7 @@ function CountryPicker() {
   ────────────────────────────────────────────────────────── */
   const countriesInRegion = useMemo(() => {
     // pretend this is slow (complex sort, i18n collation, etc.)
+    console.log("Sorting countries...");
     return allCountries
       .filter(c => c.region === region)
       .sort((a, b) => a.name.localeCompare(b.name));

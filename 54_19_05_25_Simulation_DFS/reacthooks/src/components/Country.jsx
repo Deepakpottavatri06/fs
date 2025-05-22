@@ -25,7 +25,7 @@ export default function Country() {
                 {country.name}
             </option>
         ));
-    });
+    }, [countries]);
     return (
         <div>
             <label className="block mb-2 font-semibold">Select Country:</label>

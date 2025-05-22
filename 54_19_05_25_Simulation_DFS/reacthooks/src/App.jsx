@@ -3,8 +3,8 @@ import CountryPicker from "./components/CountryPicker"
 function App() {
   return (
     <>
-      <Country />
-      {/* <CountryPicker /> */}
+      {/* <Country /> */}
+      <CountryPicker />
     </>
   )
 }
