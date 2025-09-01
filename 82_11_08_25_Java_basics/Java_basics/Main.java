@@ -40,6 +40,17 @@ class Derived extends Base{
         System.out.println("x is "+x);
     }
 }
+
+class A {
+    static { System.out.println("A static"); }
+    { System.out.println("A instance"); }
+    public A() { System.out.println("A constructor"); }
+}
+class B extends A {
+    static { System.out.println("B static"); }
+    { System.out.println("B instance"); }
+    public B() { System.out.println("B constructor"); }
+}
 public class Main {
     /*
      * static blocks of base, derive
@@ -67,7 +78,7 @@ public class Main {
         };
 
         System.out.println(base1);
-
+        // A obj = new B();
         // Base base2 = new Derived();
     }
 }

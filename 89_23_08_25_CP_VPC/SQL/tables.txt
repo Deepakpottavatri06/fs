@@ -1,0 +1,102 @@
+teachers
++------------+-------------------+------------------+----------------------+
+| teacher_id | name              | department       | email                |
++------------+-------------------+------------------+----------------------+
+|          1 | Dr. Anjali Mehta  | Computer Science | anjali.mehta@univ.in |
+|          2 | Prof. Rajesh Iyer | Mathematics      | rajesh.iyer@univ.in  |
+|          3 | Dr. Nisha Verma   | Physics          | nisha.verma@univ.in  |
+|          4 | Prof. Sameer Shah | Chemistry        | sameer.shah@univ.in  |
+|          5 | Dr. Kavita Rao    | Biology          | kavita.rao@univ.in   |
+|          6 | Prof. Amit Kumar  | Electrical       | amit.kumar@univ.in   |
+|          7 | Dr. Pooja Joshi   | Mechanical       | pooja.joshi@univ.in  |
+|          8 | Prof. Anil Sharma | Civil            | anil.sharma@univ.in  |
+|          9 | Dr. Sneha Patil   | Electronics      | sneha.patil@univ.in  |
+|         10 | Prof. Deepak Nair | Information Tech | deepak.nair@univ.in  |
+|         11 | Dr. Priya Bansal  | Mathematics      | priya.bansal@univ.in |
+|         12 | Prof. Kiran Desai | Physics          | kiran.desai@univ.in  |
+|         13 | Dr. Rahul Singh   | Computer Science | rahul.singh@univ.in  |
+|         14 | Prof. Neha Kapoor | Chemistry        | neha.kapoor@univ.in  |
+|         15 | Dr. Alok Jain     | Biology          | alok.jain@univ.in    |
++------------+-------------------+------------------+----------------------+
+
+students
++------------+-------------------+-----------------+---------------------------+
+| student_id | name              | enrollment_year | email                     |
++------------+-------------------+-----------------+---------------------------+
+|          1 | Rohan Sharma      |            2022 | rohan.sharma@univ.in      |
+|          2 | Sneha Reddy       |            2022 | sneha.reddy@univ.in       |
+|          3 | Vikram Rao        |            2021 | vikram.rao@univ.in        |
+|          4 | Aditi Singh       |            2023 | aditi.singh@univ.in       |
+|          5 | Manoj Deshmukh    |            2023 | manoj.deshmukh@univ.in    |
+|          6 | Ritika Jain       |            2022 | ritika.jain@univ.in       |
+|          7 | Karan Mehra       |            2021 | karan.mehra@univ.in       |
+|          8 | Ankita Das        |            2022 | ankita.das@univ.in        |
+|          9 | Tarun Patel       |            2021 | tarun.patel@univ.in       |
+|         10 | Megha Bhat        |            2023 | megha.bhat@univ.in        |
+|         11 | Nikhil Chatterjee |            2021 | nikhil.chatterjee@univ.in |
+|         12 | Deepika Ghosh     |            2022 | deepika.ghosh@univ.in     |
+|         13 | Arjun Varma       |            2023 | arjun.varma@univ.in       |
+|         14 | Shruti Kulkarni   |            2022 | shruti.kulkarni@univ.in   |
+|         15 | Harsh Vardhan     |            2023 | harsh.vardhan@univ.in     |
++------------+-------------------+-----------------+---------------------------+
+
+
+courses
+
++-----------+---------------------+---------+------------+
+| course_id | course_name         | credits | teacher_id |
++-----------+---------------------+---------+------------+
+|         1 | Data Structures     |       4 |          1 |
+|         2 | Calculus I          |       3 |          2 |
+|         3 | Classical Mechanics |       4 |          3 |
+|         4 | Organic Chemistry   |       4 |          4 |
+|         5 | Genetics            |       3 |          5 |
+|         6 | Circuits            |       3 |          6 |
+|         7 | Thermodynamics      |       4 |          7 |
+|         8 | Structural Analysis |       3 |          8 |
+|         9 | Digital Systems     |       3 |          9 |
+|        10 | Networks            |       3 |         10 |
+|        11 | Linear Algebra      |       4 |         11 |
+|        12 | Quantum Physics     |       4 |         12 |
+|        13 | Algorithms          |       4 |         13 |
+|        14 | Inorganic Chemistry |       4 |         14 |
+|        15 | Microbiology        |       3 |         15 |
++-----------+---------------------+---------+------------+
+
+
+results
+
++-----------+------------+-----------+-------+------------+
+| result_id | student_id | course_id | grade | semester   |
++-----------+------------+-----------+-------+------------+
+|         1 |          1 |         1 | A     | Fall2022   |
+|         2 |          1 |         2 | B+    | Fall2022   |
+|         3 |          2 |         3 | A-    | Spring2023 |
+|         4 |          2 |         4 | B     | Spring2023 |
+|         5 |          3 |         5 | A+    | Fall2022   |
+|         6 |          3 |         6 | B+    | Fall2022   |
+|         7 |          4 |         7 | A     | Spring2023 |
+|         8 |          4 |         8 | A-    | Spring2023 |
+|         9 |          5 |         9 | B     | Fall2022   |
+|        10 |          5 |        10 | A+    | Fall2022   |
+|        11 |          6 |        11 | A-    | Spring2023 |
+|        12 |          6 |        12 | B+    | Spring2023 |
+|        13 |          7 |        13 | A+    | Fall2022   |
+|        14 |          7 |        14 | B     | Fall2022   |
+|        15 |          8 |        15 | A     | Spring2023 |
+|        16 |          8 |         1 | B+    | Spring2023 |
+|        17 |          9 |         2 | A     | Fall2022   |
+|        18 |          9 |         3 | B-    | Fall2022   |
+|        19 |         10 |         4 | A     | Spring2023 |
+|        20 |         10 |         5 | B+    | Spring2023 |
+|        21 |         11 |         6 | A-    | Fall2022   |
+|        22 |         11 |         7 | B+    | Fall2022   |
+|        23 |         12 |         8 | A+    | Spring2023 |
+|        24 |         12 |         9 | A-    | Spring2023 |
+|        25 |         13 |        10 | B+    | Fall2022   |
+|        26 |         13 |        11 | A     | Fall2022   |
+|        27 |         14 |        12 | A-    | Spring2023 |
+|        28 |         14 |        13 | B+    | Spring2023 |
+|        29 |         15 |        14 | A     | Fall2022   |
+|        30 |         15 |        15 | B+    | Fall2022   |
++-----------+------------+-----------+-------+------------+
