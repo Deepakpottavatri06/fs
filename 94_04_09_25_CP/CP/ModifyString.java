@@ -56,11 +56,6 @@ public class ModifyString{
             revPrefix[i] = revPrefix[i+1] + arr[i]; 
         }
         for(int i = 0; i < n; i++){
-            // System.out.println("i = "+i);
-            // for(int j = 0; j<=i; j++){
-            //     temp[j] = (char)((int)temp[j] + (arr[i]%26));
-            //     // System.out.println("  - "+temp[j]);
-            // }
             temp[i] = (char)('a' + (temp[i]-'a'+revPrefix[i])%26);
         }
         return new String(temp);
