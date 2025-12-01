@@ -26,3 +26,4 @@ replay_pid*
 test.java
 **/node_modules
 *.env
+.vscode/
